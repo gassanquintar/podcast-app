@@ -3,16 +3,16 @@ import Routes from './router/routes';
 import { ThemeProvider } from '@mui/material';
 import { defaultTheme } from './theme/defaultTheme';
 import BaseLayout from './layouts/BaseLayout';
-import MainBar from './layouts/BaseLayout/MainBar';
+import MainContainer from './layouts/BaseLayout/MainContainer';
 
 const App: FC = () => {
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
         <BaseLayout>
-          <MainBar>
+          <MainContainer>
             <Routes />
-          </MainBar>
+          </MainContainer>
         </BaseLayout>
       </ThemeProvider>
     </>
