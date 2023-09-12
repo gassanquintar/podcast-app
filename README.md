@@ -6,12 +6,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install`
+
+Run the above command to install all the packages required to run the project correctly.
+
+**Note**: The project includes a file .env.example that contains the environment variables, before running the project rename the file to .env
+
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-Note: The project includes a file .env.example that contains the environment variables, before running the project rename the file to .env
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
