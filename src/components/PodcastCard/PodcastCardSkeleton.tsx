@@ -42,4 +42,4 @@ const PodcastCardSkeleton: FC = () => {
   );
 };
 
-export default PodcastCardSkeleton;
+export default React.memo(PodcastCardSkeleton);
