@@ -28,7 +28,12 @@ interface IAuthor {
 }
 
 export interface IEntry {
-    id?: Attributes;
+    id?: {
+        label: string;
+        attributes: {
+            'im:id': string;
+        };
+    };
     category?: Category;
     'im:artist': Attributes;
     'im:contentType'?: Attributes;
@@ -40,6 +45,7 @@ export interface IEntry {
     rights?: Attributes;
     summary?: Attributes;
     title: Attributes;
+    postcastId: string;
     podcastTitle: string;
     podcastArtist: string;
     podcastImage?: string;
@@ -54,4 +60,43 @@ export interface Feed {
     rights: Attributes;
     title: Attributes;
     link: Attributes[];
+}
+
+export interface IPodcastsListProps {
+    podcastsList: IEntry[] | undefined;
+    loading: boolean;
+    error: boolean;
+}
+export interface IPodcastDetailResponse {
+    resultCount: number;
+    results: IPodcastDetail[];
+}
+export interface IallOriginsResponse {
+    contents: string;
+    status: {
+        http_code: number;
+        [key: string]: any;
+    };
+}
+export interface IPodcastDetail {
+    trackName: string;
+    releaseDate: string;
+    wrapperType: string;
+    trackTimeMillis: number;
+    collectionName: string;
+    artistName: string;
+    description: string;
+    artworkUrl160: string;
+    episodeUrl?: string;
+    [key: string]: any;
+}
+
+export interface IPodcastResponse extends IResultResponse {
+    data: IallOriginsResponse;
+}
+
+export interface IPodcastEpisodeProps {
+    podcastEpisodesList: IPodcastDetail[] | undefined;
+    loading: boolean;
+    error: boolean;
 }
