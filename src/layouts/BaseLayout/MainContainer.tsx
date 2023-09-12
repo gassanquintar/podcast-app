@@ -1,6 +1,7 @@
-import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { FC, ReactNode } from 'react';
 import MainBar from './MainBar';
+import React from 'react';
 
 interface IProps {
   children?: ReactNode;
@@ -22,4 +23,4 @@ const MainContainer: FC<IProps> = ({ children }: IProps) => {
   );
 };
 
-export default MainContainer;
+export default React.memo(MainContainer);
