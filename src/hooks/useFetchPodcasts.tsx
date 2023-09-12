@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { IEntry, IPodcastsResponse } from '../types/podcast';
+import { IPodcastsListProps, IPodcastsResponse } from '../types/podcast';
 import { useGetPodcastsQuery } from '../reducers/itunes/itunesApiSlice';
 import {
   setInitialLoad,
   setPodcastsList,
 } from '../reducers/itunes/podcastsSlide';
-
-interface IPodcastsListProps {
-  podcastsList: IEntry[] | undefined;
-  loading: boolean;
-}
-
 interface IParams {
   limit: number;
   gender: number;
@@ -69,6 +63,7 @@ const useFetchPodcasts = ({
   return {
     podcastsList,
     loading: isLoading,
+    error: isError,
   };
 };
 
